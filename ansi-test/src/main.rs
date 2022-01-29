@@ -7,8 +7,8 @@ fn main() {
     cls();
 
     //-- Cursor off
-    println!("{esc}[?25l", esc = 27 as char);
-
+    cursor_off();
+   
     //-- Marco de la pantalla
     draw_box(1,1,23,80);
 
@@ -41,7 +41,7 @@ fn main() {
     locate(1,24);
 
     //-- Cursor on
-    println!("{esc}[?25h", esc = 27 as char);
+    cursor_on();
 }
 
 //----------------------------------------------
@@ -107,4 +107,13 @@ fn draw_box(x:u8, y:u8, h:u8, w:u8) {
     }
     
     print!("┘");
+}
+
+fn cursor_on() {
+    println!("{esc}[?25h", esc = 27 as char);
+}
+
+fn cursor_off() {
+     //-- Cursor off
+     println!("{esc}[?25l", esc = 27 as char);
 }
