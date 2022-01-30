@@ -1,6 +1,12 @@
 fn main() {
-    println!("Hello, world!");
-    let n = gcd(20,10);
+
+    let a = 14;
+    let b = 7;
+
+    println!("Calcular el Máximo Común divisor");
+    println!("Numeros: {} y {}",a,b);
+
+    let n = gcd(a,b);
 
     println!("Resultado: {}", n);
 }
